@@ -1,8 +1,6 @@
 name: Slow
 on:
-  push:
-    branches:
-      - master
+  pull_request:
 
 jobs:
   release:
@@ -13,4 +11,5 @@ jobs:
           for i in {1..3600}; do
             printf "$i\t"
             date
+            sleep 1
           done
