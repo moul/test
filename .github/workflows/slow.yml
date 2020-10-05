@@ -1,0 +1,16 @@
+name: Slow
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    name: slow
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for i in {1..3600}; do
+            printf "$i\t"
+            date
+          done
